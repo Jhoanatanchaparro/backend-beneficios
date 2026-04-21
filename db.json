@@ -1,0 +1,39 @@
+{
+  "Beneficiarios_DB": [
+    {
+      "ID": 1,
+      "NombreCompleto": "Juan Perez",
+      "NumeroDocumento": "123",
+      "FechaNacimiento": "1960-05-10",
+      "Estrato": 2,
+      "IngresosMensuales": 900000,
+      "NucleoFamiliar": 5
+    }
+  ],
+  "Solicitudes_Beneficio": [
+    {
+      "ID": 1776745508472,
+      "BeneficiarioID": 1,
+      "TipoBeneficio": "Educativo",
+      "Estado": "Aprobado",
+      "ScoreElegibilidad": 90,
+      "Folio": "SB-2026-1776745508472",
+      "FechaRespuesta": "2026-04-21T04:25:16.091Z",
+      "Procesado": true,
+      "MotivoDecision": "✔ Ingresos bajos, ✘ Ingresos medios, ✔ Estrato bajo, ✔ Familia numerosa, ✔ Adulto mayor, ✘ Prioridad vivienda",
+      "NumReintentos": 0
+    },
+    {
+      "ID": 1776745531897,
+      "BeneficiarioID": 1,
+      "TipoBeneficio": "Educativo",
+      "Estado": "Aprobado",
+      "ScoreElegibilidad": 90,
+      "Folio": "SB-2026-1776745531897",
+      "FechaRespuesta": "2026-04-21T04:25:35.753Z",
+      "Procesado": true,
+      "MotivoDecision": "✔ Ingresos bajos, ✘ Ingresos medios, ✔ Estrato bajo, ✔ Familia numerosa, ✔ Adulto mayor, ✘ Prioridad vivienda",
+      "NumReintentos": 0
+    }
+  ]
+}

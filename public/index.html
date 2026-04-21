@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>App Beneficios</title>
+<style>
+body { font-family: Arial; background:#f4f6f9; padding:20px;}
+.container { max-width:800px; margin:auto;}
+.screen{display:none;} .active{display:block;}
+.card{background:white;padding:15px;margin:10px;border-radius:10px;}
+.aprobado{border-left:5px solid green;}
+.revision{border-left:5px solid orange;}
+.rechazado{border-left:5px solid red;}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>App de Beneficios</h2>
+
+<button onclick="mostrar(1)">Registro</button>
+<button onclick="mostrar(2)">Consultar</button>
+
+<div id="p1" class="screen active">
+
+<input id="doc" placeholder="Documento">
+<select id="tipo">
+<option>Alimentario</option>
+<option>Educativo</option>
+<option>Vivienda</option>
+</select>
+
+<button onclick="buscar()">Buscar</button>
+<p id="res"></p>
+
+<button onclick="crear()">Enviar</button>
+
+</div>
+
+<div id="p2" class="screen">
+
+<input id="bus" placeholder="Buscar">
+<button onclick="cargar()">Buscar</button>
+
+<div id="out"></div>
+
+</div>
+
+</div>
+
+<script>
+
+let user=null;
+
+function mostrar(n){
+document.querySelectorAll(".screen").forEach(x=>x.classList.remove("active"));
+document.getElementById("p"+n).classList.add("active");
+if(n==2) cargar();
+}
+
+async function buscar(){
+const r=await fetch("/beneficiarios/"+doc.value);
+if(r.ok){user=await r.json();res.innerText="encontrado";}
+else{user=null;res.innerText="no existe";}
+}
+
+async function crear(){
+if(!user)return alert("no existe");
+
+const r=await fetch("/solicitudes",{
+method:"POST",
+headers:{"Content-Type":"application/json"},
+body:JSON.stringify({NumeroDocumento:doc.value,TipoBeneficio:tipo.value})
+});
+
+const data=await r.json();
+
+if(r.ok) alert("✅ creado");
+else alert(data.error);
+}
+
+async function cargar(){
+const r=await fetch("/solicitudes");
+const d=await r.json();
+
+out.innerHTML="";
+
+d.filter(x=>x.Procesado).reverse().forEach(s=>{
+
+let c="rechazado";
+if(s.Estado=="Aprobado")c="aprobado";
+if(s.Estado=="En revisión")c="revision";
+
+out.innerHTML+=`
+<div class="card ${c}">
+<b>${s.NombreCompleto}</b><br>
+Doc: ${s.NumeroDocumento}<br>
+Folio: ${s.Folio}<br>
+Estado: ${s.Estado}<br>
+Score: ${s.ScoreElegibilidad}<br>
+</div>
+`;
+});
+}
+
+setInterval(cargar,3000);
+
+</script>
+
+</body>
+</html>
