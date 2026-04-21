@@ -8,6 +8,42 @@
       "Estrato": 2,
       "IngresosMensuales": 900000,
       "NucleoFamiliar": 5
+    },
+    {
+      "ID": 2,
+      "NombreCompleto": "Maria Gomez",
+      "NumeroDocumento": "456",
+      "FechaNacimiento": "1975-09-12",
+      "Estrato": 1,
+      "IngresosMensuales": 750000,
+      "NucleoFamiliar": 4
+    },
+    {
+      "ID": 3,
+      "NombreCompleto": "Carlos Rodriguez",
+      "NumeroDocumento": "789",
+      "FechaNacimiento": "1955-03-20",
+      "Estrato": 3,
+      "IngresosMensuales": 1200000,
+      "NucleoFamiliar": 2
+    },
+    {
+      "ID": 4,
+      "NombreCompleto": "Ana Martinez",
+      "NumeroDocumento": "321",
+      "FechaNacimiento": "1988-11-05",
+      "Estrato": 2,
+      "IngresosMensuales": 850000,
+      "NucleoFamiliar": 3
+    },
+    {
+      "ID": 5,
+      "NombreCompleto": "Luis Torres",
+      "NumeroDocumento": "654",
+      "FechaNacimiento": "1990-02-14",
+      "Estrato": 1,
+      "IngresosMensuales": 650000,
+      "NucleoFamiliar": 6
     }
   ],
   "Solicitudes_Beneficio": [
@@ -20,7 +56,7 @@
       "Folio": "SB-2026-1776745508472",
       "FechaRespuesta": "2026-04-21T04:25:16.091Z",
       "Procesado": true,
-      "MotivoDecision": "✔ Ingresos bajos, ✘ Ingresos medios, ✔ Estrato bajo, ✔ Familia numerosa, ✔ Adulto mayor, ✘ Prioridad vivienda",
+      "MotivoDecision": "✔ Ingresos bajos, ✔ Estrato bajo, ✔ Familia numerosa",
       "NumReintentos": 0
     },
     {
@@ -32,8 +68,68 @@
       "Folio": "SB-2026-1776745531897",
       "FechaRespuesta": "2026-04-21T04:25:35.753Z",
       "Procesado": true,
-      "MotivoDecision": "✔ Ingresos bajos, ✘ Ingresos medios, ✔ Estrato bajo, ✔ Familia numerosa, ✔ Adulto mayor, ✘ Prioridad vivienda",
+      "MotivoDecision": "✔ Ingresos bajos, ✔ Estrato bajo, ✔ Familia numerosa",
       "NumReintentos": 0
+    },
+    {
+      "ID": 1776745600001,
+      "BeneficiarioID": 2,
+      "TipoBeneficio": "Salud",
+      "Estado": "En revisión",
+      "ScoreElegibilidad": 75,
+      "Folio": "SB-2026-1776745600001",
+      "FechaRespuesta": null,
+      "Procesado": false,
+      "MotivoDecision": "✔ Ingresos bajos, ✔ Estrato bajo",
+      "NumReintentos": 45
+    },
+    {
+      "ID": 1776745600002,
+      "BeneficiarioID": 3,
+      "TipoBeneficio": "Vivienda",
+      "Estado": "Rechazado",
+      "ScoreElegibilidad": 40,
+      "Folio": "SB-2026-1776745600002",
+      "FechaRespuesta": "2026-04-21T10:15:00.000Z",
+      "Procesado": true,
+      "MotivoDecision": "✘ Ingresos altos, ✘ Estrato bajo",
+      "NumReintentos": 0
+    },
+    {
+      "ID": 1776745600003,
+      "BeneficiarioID": 4,
+      "TipoBeneficio": "Educativo",
+      "Estado": "Aprobado",
+      "ScoreElegibilidad": 88,
+      "Folio": "SB-2026-1776745600003",
+      "FechaRespuesta": "2026-04-21T12:30:00.000Z",
+      "Procesado": true,
+      "MotivoDecision": "✔ Ingresos bajos, ✔ Estrato bajo",
+      "NumReintentos": 0
+    },
+    {
+      "ID": 1776745600004,
+      "BeneficiarioID": 5,
+      "TipoBeneficio": "Alimentación",
+      "Estado": "Aprobado",
+      "ScoreElegibilidad": 95,
+      "Folio": "SB-2026-1776745600004",
+      "FechaRespuesta": "2026-04-21T14:00:00.000Z",
+      "Procesado": true,
+      "MotivoDecision": "✔ Ingresos muy bajos, ✔ Estrato 1, ✔ Alta vulnerabilidad",
+      "NumReintentos": 0
+    },
+    {
+      "ID": 1776748163670,
+      "BeneficiarioID": 5,
+      "TipoBeneficio": "Alimentario",
+      "Estado": "Pendiente",
+      "ScoreElegibilidad": null,
+      "Folio": "SB-2026-1776748163670",
+      "FechaRespuesta": null,
+      "Procesado": false,
+      "MotivoDecision": "",
+      "NumReintentos": 30
     }
   ]
 }
